@@ -1,7 +1,14 @@
 import React from "react";
+import Places from "../components/Places/Places";
 
 const Tour = () => {
-    return <div>Tour</div>;
+    return (
+       <>
+       <div>
+            <Places />
+       </div>
+       </>
+    );
 };
 
 export default Tour;

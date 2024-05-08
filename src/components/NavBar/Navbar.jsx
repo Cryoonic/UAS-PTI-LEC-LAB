@@ -22,6 +22,14 @@ const NavBar = () => {
     const toggleMenu = () => {
         setshowMenu(!showMenu);
     };
+
+    const scrollToPlaces = () => {
+        if (placesRef.current) {
+            placesRef.current.scrollIntoView({ behavior: "smooth" });
+            setshowMenu(false); // Tutup menu setelah navigasi
+        }
+    };
+    
     return(
         <>
             <div className="fixed top-0 right-0 w-full bg-white text-black shadow-md z-[99999]">

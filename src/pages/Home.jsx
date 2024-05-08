@@ -2,6 +2,10 @@ import React from "react";
 import MainVid from "../assets/video/MainVid.mp4";
 import Hero from "../components/Hero/Hero";
 import Places from "../components/Places/Places";
+import BannerImg from "../components/BannerImg/BannerImg";
+import Batik from "../assets/batik.jpeg";
+import Blogs from "./Blogs";
+
 
 
 const Home = () => {
@@ -15,6 +19,8 @@ const Home = () => {
                     <Hero/>
                 </div>
                 <Places />
+                <BannerImg img={Batik}/>
+                <Blogs />
             </div>
         </>
     );

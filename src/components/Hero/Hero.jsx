@@ -7,7 +7,7 @@ const Hero = () => {
                 <div className="container grid grid-cols-1 gap-4">
                     <div className="text-white">
                         <p data-aos="fade-up" className="text-xl">Ayo                                                                                                sama-sama</p>
-                        <p data-aos="fade-up" data-aos-delay="3000" className="font-bold text-3xl">Kenali Jawa timur</p>
+                        <p data-aos="fade-up" data-aos-delay="300" className="font-bold text-3xl">Kenali Jawa timur</p>
                     </div>
                 </div>
             </div>                                      
