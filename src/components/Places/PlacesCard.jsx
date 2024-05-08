@@ -1,12 +1,18 @@
 import React from "react";
 import { IoLocationSharp } from "react-icons/io5";
 
+const PlacesCard = ({ img, title, location, description, type, onClick, onClosePopup }) => {
+    // Event handler untuk menutup popup saat gambar diklik
+    const handleClosePopup = () => {
+        if (onClosePopup) {
+            onClosePopup();
+        }
+    };
 
-const PlacesCard = ({img,title,location,description,type}) => {
     return (
-        <div className="shadow-lg transition-all duration-500 hover:shadow-xl cursor-pointer">
+        <div className="shadow-lg transition-all duration-500 hover:shadow-xl cursor-pointer" onClick={onClick}>
             <div className="overflow-hidden">
-                <img src={img} alt="" className="mx-auto h-[220px] w-full object-cover transition duration-700 hover:skew-x-2 hover:scale-110" />
+                <img src={img} alt="" className="mx-auto h-[220px] w-full object-cover transition duration-700 hover:skew-x-2 hover:scale-110" onClick={handleClosePopup} />
             </div>
 
             <div className="space-y-2 p-3">

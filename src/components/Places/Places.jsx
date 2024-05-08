@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PlacesCard from "./PlacesCard";
 import Img1 from "../../assets/places/gambar1.jpeg";
 import Img2 from "../../assets/places/gambar2.jpeg";
@@ -23,7 +23,7 @@ const PlacesData = [
     {
         img: Img2,
         title: "Air Terjun Tumpak Sewu",
-        location: "perbatasan Malang-Lumajang, Jawa Timur tepatnya berada pada dua desa yaitu Desa Sidomulyo, Kecamatan Pronojiwo, Kabupaten Lumajang dan Desa Sidorenggo Kecamatan Ampel Gading Kabupaten Malang Provinsi Jawa Timur, Indonesia.",
+        location: "Kecamatan Pronojiwo, Kabupaten Lumajang dan Desa Sidorenggo Kecamatan Ampel Gading Kabupaten Malang Provinsi Jawa Timur, Indonesia.",
         description:"sebuah air terjun berketinggian sekitar 120 meter.",
         type:"Wisata Alam",
     },
@@ -90,23 +90,59 @@ const PlacesData = [
         description:"Taman hiburan populer dengan atraksi dinosaurus, museum lilin, konsesi & pameran teknologi.",
         type:"Tempat Wisata",
     },
-]
+];
 
 const Places = () => {
+    const [popupData, setPopupData] = useState(null);
+
+    const openPopup = (data) => {
+        setPopupData(data);
+    };
+
+    const closePopup = () => {
+        setPopupData(null);
+    };
+
+    useEffect(() => {
+        const handleClickOutsidePopup = (event) => {
+            if (event.target.classList.contains("fixed")) {
+                closePopup();
+            }
+        };
+
+        window.addEventListener("click", handleClickOutsidePopup);
+
+        return () => {
+            window.removeEventListener("click", handleClickOutsidePopup);
+        };
+    }, []);
+
     return(
         <div className="bg-gray/50 py-10">
             <div className="container">
-                <h1 className="my-8 border-l-8 border-primary/50 py-2 pl-2 text-3xl font-bold">Best Tourist Attraction to vist</h1>
+                <h1 className="my-8 border-l-8 border-primary/50 py-2 pl-2 text-3xl font-bold">Best Tourist Attraction to visit</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    {
-                        PlacesData.map((item,index) => (
-                            <PlacesCard key={index} {...item} />
-                        ))
-                    }
+                    {PlacesData.map((item, index) => (
+                        <PlacesCard key={index} {...item} onClick={() => openPopup(item)} />
+                    ))}
                 </div>
+                {popupData && (
+                    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center" onClick={closePopup}>
+                        <div className="bg-white p-4 rounded-lg max-w-lg">
+                            <button className="absolute top-0 right-0 m-2" onClick={closePopup}>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fillRule="evenodd" d="M10 12.586l4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L5.05 3.65l4.95 4.95 4.95-4.95 1.414 1.414-4.95 4.95z" clipRule="evenodd" />
+                                </svg>
+                            </button>
+                            <img src={popupData.img} alt={popupData.title} className="mb-2 rounded-lg" style={{ width: "100%" }} />
+                            <h2 className="text-xl font-bold">{popupData.title}</h2>
+                            <p>{popupData.description}</p>
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
-    )
+    );
 };
 
 export default Places;
