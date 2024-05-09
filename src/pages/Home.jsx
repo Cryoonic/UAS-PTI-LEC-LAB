@@ -5,6 +5,9 @@ import Places from "../components/Places/Places";
 import BannerImg from "../components/BannerImg/BannerImg";
 import Batik from "../assets/batik.jpeg";
 import Blogs from "./Blogs";
+import Banner from "../components/Banner/Banner";
+import Timur from "../assets/vector2.jpeg";
+import ContactComp from "../components/Contact/ContactComp";
 
 
 
@@ -21,6 +24,9 @@ const Home = () => {
                 <Places />
                 <BannerImg img={Batik}/>
                 <Blogs />
+                <Banner />
+                <BannerImg img={Timur} />
+                <ContactComp />
             </div>
         </>
     );
