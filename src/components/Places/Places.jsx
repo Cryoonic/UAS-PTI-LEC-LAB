@@ -23,7 +23,7 @@ const PlacesData = [
     {
         img: Img2,
         title: "Air Terjun Tumpak Sewu",
-        location: "Kecamatan Pronojiwo, Kabupaten Lumajang dan Desa Sidorenggo Kecamatan Ampel Gading Kabupaten Malang Provinsi Jawa Timur, Indonesia.",
+        location: " Kecamatan Pronojiwo, Kabupaten Lumajang dan Desa Sidorenggo Kecamatan Ampel Gading Kabupaten Malang Provinsi Jawa Timur, Indonesia.",
         description:"sebuah air terjun berketinggian sekitar 120 meter.",
         type:"Wisata Alam",
     },

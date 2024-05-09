@@ -4,16 +4,7 @@ import LogoImg from "../../assets/assets2.webp";
 import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
 
-const DropdownLinks = [
-    {
-        name: "Makanan",
-        link: "/#makanan",
-    },
-    {
-        name: "Objek Wisata",
-        link: "/#wisata",
-    },
-]
+
 
 
 const NavBar = () => {
@@ -26,7 +17,7 @@ const NavBar = () => {
     const scrollToPlaces = () => {
         if (placesRef.current) {
             placesRef.current.scrollIntoView({ behavior: "smooth" });
-            setshowMenu(false); // Tutup menu setelah navigasi
+            setshowMenu(false); 
         }
     };
     

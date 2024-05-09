@@ -2,9 +2,8 @@ import React from "react";
 import { IoLocationSharp } from "react-icons/io5";
 
 const PlacesCard = ({ img, title, location, description, type, onClick, onClosePopup }) => {
-    // Event handler untuk menutup popup saat gambar diklik
     const handleClosePopup = () => {
-        if (onClosePopup) {
+        if(onClosePopup) {
             onClosePopup();
         }
     };
