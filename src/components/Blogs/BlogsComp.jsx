@@ -53,8 +53,8 @@ const BlogsComp = () => {
 
     return (
         <div>
-            <div data-aos="fade-up" className="container">
-                <h1 className="my-8 border-l-8 border-primary/50 py-2 pl-2 text-3xl font-bold">Cultural</h1>
+            <div className="container">
+                <h1 data-aos="fade-up" className="my-8 border-l-8 border-primary/50 py-2 pl-2 text-3xl font-bold">Cultural</h1>
                 <Slider {...settings}>
                     {BlogsData.map((item, index) => (
                         <div key={index} onClick={() => openPopup(item)}>

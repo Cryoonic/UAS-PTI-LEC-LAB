@@ -8,6 +8,7 @@ import Blogs from "./Blogs";
 import Banner from "../components/Banner/Banner";
 import Timur from "../assets/vector2.jpeg";
 import ContactComp from "../components/Contact/ContactComp";
+import Foodpedia from "../components/Foodpedia/Foodpedia";
 
 
 
@@ -26,6 +27,7 @@ const Home = () => {
                 <Blogs />
                 <Banner />
                 <BannerImg img={Timur} />
+                <Foodpedia />
                 <ContactComp />
             </div>
         </>
